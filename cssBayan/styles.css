@@ -11,92 +11,116 @@ body {
   background-color: #e3e9f9;
   font-family: "Sorce Sans Pro", sans-serif;
 }
-
 .wrapper {
   background: white;
-  box-shadow: 0px 23px 44px #cad0e0;
-  border-radius: 10px;
-  min-width: 775px;
-  padding: 30px 35px 30px;
+  box-shadow: 0 1.5rem 3rem #cad0e0;
+  border-radius: 0.8rem;
+  min-width: 70%;
+  padding: 1.8rem 2.1rem 2.1rem;
 }
-
 h1 {
   text-align: left;
   letter-spacing: 0.11rem;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 2rem;
   color: #6778e8;
-  margin-bottom: 12px;
-  margin-left: 12px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
-
-
 .meme {
-  border-top: 1px solid #6778e8;
-
+  border-top: 0.1rem solid #6778e8;
   width: 100%;
   box-sizing: border-box;
 }
-
 .nameMeme {
   display: block;
   position: relative;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding-bottom: 15px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }
-
 p {
   position: absolute;
-  left: 10px;
+  left: 0.8rem;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
-
 .open,
 .close {
   position: absolute;
-  right: 20px;
+  right: 1.2rem;
 }
-
 .close,
 .open {
   display: none;
 }
+@keyframes smooth {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .wrapper:hover .open {
   display: block;
+  animation: smooth 1s ease-in-out;
 }
-
 .image {
-  margin-bottom: 30px;
   margin: auto;
-  height: 400px;
+  margin-bottom: 2rem;
+  height: 25rem;
   display: none;
 }
-
+.selected {
+  display: block;
+}
+.image:target {
+  display: block;
+}
 .meme:hover .image {
   display: block;
   cursor: pointer;
+  animation: smooth 1s ease-in-out;
 }
 .meme:hover p {
   color: #6778e8;
 }
-
 .meme:hover .close {
   display: block;
+  animation: smooth 1s ease-in-out;
 }
 .meme:hover .open {
   display: none;
 }
-/*
-#four {
-  display: block;
+@media (max-width: 320px) {
+  .wrapper {
+    min-width: 70%;
+    margin: 0.8rem;
+  }
+  p {
+    font-size: 0.5rem;
+  }
+  .image {
+    height: 10rem;
+  }
+  .nameMeme {
+    padding-bottom: 1.3rem;
+  }
 }
-*/
-.image:target {
-  display: block;
+@media (max-width: 820px) and (min-width: 321px) {
+  .wrapper {
+    min-width: 70%;
+    min-height: 50rem;
+    margin: 0.8rem;
+  }
+  p {
+    font-size: 0.65rem;
+  }
+  .image {
+    height: 12rem;
+  }
 }
-.image:target #four {
-  display: none;
-}
+
+
